@@ -7,6 +7,7 @@ $view_all_tickets = $date_header = $date_col = false;
 // Make sure the cdata materialized view is available
 TicketForm::ensureDynamicDataView();
 
+
 // Figure out REFRESH url — which might not be accurate after posting a
 // response
 list($path,) = explode('?', $_SERVER['REQUEST_URI'], 2);
@@ -107,6 +108,7 @@ case 'assigned':
     $queue_sort_options = array('updated', 'priority,updated',
         'priority,created', 'priority,due', 'due', 'answered', 'number',
         'hot');
+    $showassigned=true;
     break;
 case 'answered':
     $status='open';
