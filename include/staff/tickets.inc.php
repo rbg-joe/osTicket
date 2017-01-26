@@ -477,8 +477,10 @@ return false;">
             }
             if ($search && !$status)
                 unset($queue_columns['priority']);
-            else
+            else {
                 unset($queue_columns['status']);
+                unset($queue_columns['priority']);
+	    }
 
             // Query string
             unset($args['sort'], $args['dir'], $args['_pjax']);
@@ -586,12 +588,12 @@ return false;">
                     if(!strcasecmp($T['status__state'],'open'))
                         $displaystatus="<b>$displaystatus</b>";
                     echo "<td>$displaystatus</td>";
-                } else { ?>
+                } else { /*?>
                 <td class="nohover" align="center"
                     style="background-color:<?php echo $T['cdata__:priority__priority_color']; ?>;">
                     <?php echo $T['cdata__:priority__priority_desc']; ?></td>
                 <?php
-                }
+                */ }
                 ?>
                 <td nowrap><span class="truncate" style="max-width: 169px"><?php
                     echo Format::htmlchars($lc); ?></span></td>
