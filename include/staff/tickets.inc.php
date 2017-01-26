@@ -550,7 +550,7 @@ return false;">
                     data-preview="#tickets/<?php echo $T['ticket_id']; ?>/preview"
                     ><?php echo $tid; ?></a></td>
                 <td align="center" nowrap><?php echo Format::datetime($T[$date_col ?: 'lastupdate']) ?: $date_fallback; ?></td>
-                <td><div style="max-width: <?php
+                <td><div style="max-width: 100% <?php/*
                     $base = 279;
                     // Make room for the paperclip and some extra
                     if ($T['attachment_count']) $base -= 18;
@@ -558,7 +558,7 @@ return false;">
                     if ($threadcount > 1) $base -= 20 + ((int) log($threadcount, 10) + 1) * 8;
                     // Make room for overdue flag and friends
                     if ($flag) $base -= 20;
-                    echo $base; ?>px; max-height: 1.2em"
+                    echo $base; */?>/*px*/; max-height: 1.2em"
                     class="<?php if ($flag) { ?>Icon <?php echo $flag; ?>Ticket <?php } ?>link truncate"
                     <?php if ($flag) { ?> title="<?php echo ucfirst($flag); ?> Ticket" <?php } ?>
                     href="tickets.php?id=<?php echo $T['ticket_id']; ?>"><?php echo $subject; ?></div>
